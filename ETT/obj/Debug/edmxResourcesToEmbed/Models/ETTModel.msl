@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ETTModelStoreContainer" CdmEntityContainer="ETTModelContainer">
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="IsTypeOf(ETTModel.Course)">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="courseId" ColumnName="courseId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="tutor" ColumnName="tutor" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="schedule" ColumnName="schedule" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+          <ScalarProperty Name="longtitude" ColumnName="longtitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Articles">
+      <EntityTypeMapping TypeName="IsTypeOf(ETTModel.Article)">
+        <MappingFragment StoreEntitySet="Articles">
+          <ScalarProperty Name="articleId" ColumnName="articleId" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="postTime" ColumnName="postTime" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SignUps">
+      <EntityTypeMapping TypeName="IsTypeOf(ETTModel.SignUp)">
+        <MappingFragment StoreEntitySet="SignUps">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="cousreId" ColumnName="cousreId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

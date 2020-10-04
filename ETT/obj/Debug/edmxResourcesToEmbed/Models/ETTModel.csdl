@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ETTModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ETTModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Courses" EntityType="ETTModel.Course" />
+    <EntitySet Name="Articles" EntityType="ETTModel.Article" />
+    <EntitySet Name="SignUps" EntityType="ETTModel.SignUp" />
+  </EntityContainer>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="courseId" />
+    </Key>
+    <Property Name="courseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" />
+    <Property Name="description" Type="String" Nullable="false" />
+    <Property Name="tutor" Type="String" Nullable="false" />
+    <Property Name="level" Type="String" Nullable="false" />
+    <Property Name="price" Type="String" Nullable="false" />
+    <Property Name="type" Type="String" Nullable="false" />
+    <Property Name="startTime" Type="String" Nullable="false" />
+    <Property Name="schedule" Type="String" Nullable="false" />
+    <Property Name="rate" Type="String" Nullable="false" />
+    <Property Name="longtitude" Type="String" Nullable="false" />
+    <Property Name="latitude" Type="String" Nullable="false" />
+    <Property Name="location" Type="String" Nullable="false" />
+    <Property Name="url" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="articleId" />
+    </Key>
+    <Property Name="articleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="author" Type="String" Nullable="false" />
+    <Property Name="content" Type="String" Nullable="false" />
+    <Property Name="postTime" Type="String" Nullable="false" />
+    <Property Name="level" Type="String" Nullable="false" />
+    <Property Name="url" Type="String" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SignUp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cousreId" Type="String" Nullable="false" />
+    <Property Name="userId" Type="String" Nullable="false" />
+    <Property Name="dateTime" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>

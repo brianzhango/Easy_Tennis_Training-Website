@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Easy Tennis Training</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Easy Tennis Training", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Article", "Index", "Articles")</li>
+                    <li>@Html.ActionLink("Course", "Index", "Courses")</li>
+                    
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole( "Admin"))
+                        {
+                    <li>@Html.ActionLink("Admin", "Admin", "Home")</li>
+                        }
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if(User.IsInRole("User"))
+                            {
+                    <li> @Html.ActionLink("User", "User", "Home") </li>
+                            }
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Easy Tennis Training</p>
+        </footer>
+    </div>
+
+    <div class="bottom"></div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+<style>
+    .navbar {
+        background-color: lightskyblue;
+    }
+
+    .navbar-brand {
+        font-size: 40px;
+        color: blue;
+    }
+
+    .nav {
+        font-size: 18px;
+        color: brown;
+    }
+
+    .bottom {
+        height: 50px;
+        background-color: lightskyblue;
+    }
+
+    .container {
+        background-color: lightskyblue;
+        width: 1000px;
+        color: mediumseagreen;
+    }
+
+    .navbar-toggle {
+        color: brown;
+    }
+
+    .container {
+        font-family: Cooper;
+    }
+</style>

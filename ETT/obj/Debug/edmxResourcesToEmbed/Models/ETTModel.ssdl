@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ETTModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ETTModelStoreContainer">
+    <EntitySet Name="Courses" EntityType="ETTModel.Store.Courses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Articles" EntityType="ETTModel.Store.Articles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SignUps" EntityType="ETTModel.Store.SignUps" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="courseId" />
+    </Key>
+    <Property Name="courseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tutor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="level" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="price" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="startTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="schedule" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="rate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="longtitude" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="latitude" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="url" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Articles">
+    <Key>
+      <PropertyRef Name="articleId" />
+    </Key>
+    <Property Name="articleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="author" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="postTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="level" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="url" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SignUps">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cousreId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="userId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dateTime" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema>
