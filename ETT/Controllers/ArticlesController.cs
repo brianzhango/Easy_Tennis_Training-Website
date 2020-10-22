@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -46,10 +47,23 @@ namespace ETT.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "articleId,author,content,postTime,level,url,name")] Article article)
+        public ActionResult Create([Bind(Include = "articleId,author,content,postTime,level,name")] Article article, HttpPostedFileBase
+postedFile)
         {
+
+            ModelState.Clear();
+            var myUniqueFileName = string.Format(@"{0}", Guid.NewGuid());
+            article.url = myUniqueFileName;
+            TryValidateModel(article);
+
             if (ModelState.IsValid)
             {
+                string serverPath = Server.MapPath("~/Uploads/");
+                string fileExtension = Path.GetExtension(postedFile.FileName);
+                string filePath = article.url + fileExtension;
+                article.url = filePath;
+                postedFile.SaveAs(serverPath + article.url);
+
                 db.Articles.Add(article);
                 db.SaveChanges();
                 return RedirectToAction("Index");

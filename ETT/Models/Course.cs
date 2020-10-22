@@ -24,8 +24,8 @@ namespace ETT.Models
         public string startTime { get; set; }
         public string schedule { get; set; }
         public string rate { get; set; }
-        public string longtitude { get; set; }
-        public string latitude { get; set; }
+        public Nullable<decimal> longitude { get; set; }
+        public Nullable<decimal> latitude { get; set; }
         public string location { get; set; }
         public string url { get; set; }
     }

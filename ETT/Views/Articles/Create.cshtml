@@ -7,7 +7,8 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Articles", FormMethod.Post,
+                      new { enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     
@@ -26,7 +27,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.content, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control", @id = "mytextarea" } })
                 @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -48,10 +49,9 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.url, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.url, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.url, "", new { @class = "text-danger" })
+            <label class="control-label col-md-2" for="Name">Select File</label>
+            <div class=" col-md-10">
+                <input type="file" name="postedFile" class="btn btn-default" accept="image/png, image/gif, image/jpeg" />
             </div>
         </div>
 
@@ -74,3 +74,11 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        tinymce.init({
+            selector: '#mytextarea'
+        });
+    </script>
+}

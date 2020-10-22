@@ -48,7 +48,7 @@ CREATE TABLE [dbo].[Courses] (
     [startTime] nvarchar(max)  NOT NULL,
     [schedule] nvarchar(max)  NOT NULL,
     [rate] nvarchar(max)  NOT NULL,
-    [longtitude] nvarchar(max)  NOT NULL,
+    [longitude] nvarchar(max)  NOT NULL,
     [latitude] nvarchar(max)  NOT NULL,
     [location] nvarchar(max)  NOT NULL,
     [url] nvarchar(max)  NOT NULL

@@ -7,8 +7,21 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    @* This is for the mapbox map. *@
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    @*This is used for the Geocoding Mapbox API*@
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-glgeocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-glgeocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet"
+          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+          type="text/css" />
+    <script src="~/Scripts/tinymce/tinymce.min.js"></script>
 </head>
 <body>
+   
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -24,20 +37,20 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Article", "Index", "Articles")</li>
                     <li>@Html.ActionLink("Course", "Index", "Courses")</li>
-                    
+
                     @if (User.Identity.IsAuthenticated)
                     {
-                        if (User.IsInRole( "Admin"))
+                        if (User.IsInRole("Admin"))
                         {
-                    <li>@Html.ActionLink("Admin", "Admin", "Home")</li>
+                            <li>@Html.ActionLink("Admin", "Admin", "Home")</li>
                         }
                     }
                     @if (User.Identity.IsAuthenticated)
                     {
-                        if(User.IsInRole("User"))
-                            {
-                    <li> @Html.ActionLink("User", "User", "Home") </li>
-                            }
+                        if (User.IsInRole("User"))
+                        {
+                            <li> @Html.ActionLink("User", "User", "Home") </li>
+                        }
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

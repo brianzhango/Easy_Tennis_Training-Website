@@ -11,11 +11,16 @@ namespace ETT.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public partial class Article
     {
         public int articleId { get; set; }
         public string author { get; set; }
+
+        [Required]
+        [AllowHtml]
         public string content { get; set; }
         public string postTime { get; set; }
         public string level { get; set; }

@@ -58,11 +58,11 @@ namespace ETT
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "347231433005-a64nlhhf45pdaov5t4dk63cfre7dag0h.apps.googleusercontent.com",
+                ClientSecret = "IpbBK2xQKWjKqsqkHWP7D1nW"
+            });
         }
     }
 }

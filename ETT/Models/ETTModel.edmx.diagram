@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3828a5d0b3994073bc2dd3b3f7319b81" Name="Diagram1" >
+      <Diagram DiagramId="3828a5d0b3994073bc2dd3b3f7319b81" Name="Diagram1" ZoomLevel="83" >
         <EntityTypeShape EntityType="ETTModel.Course" Width="1.5" PointX="2.75" PointY="1.125" />
         <EntityTypeShape EntityType="ETTModel.Article" Width="1.5" PointX="5.625" PointY="1.25" />
         <EntityTypeShape EntityType="ETTModel.SignUp" Width="1.5" PointX="9" PointY="1.75" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

@@ -106,3 +106,6 @@ F:\5032\ETT\obj\Debug\ETT.csproj.CopyComplete
 F:\5032\ETT\obj\Debug\ETT.dll
 F:\5032\ETT\obj\Debug\ETT.pdb
 F:\5032\ETT\obj\Debug\ETT.csprojAssemblyReference.cache
+F:\5032\ETT\bin\SendGrid.dll
+F:\5032\ETT\bin\SendGrid.pdb
+F:\5032\ETT\bin\SendGrid.xml

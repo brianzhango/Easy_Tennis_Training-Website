@@ -4,10 +4,10 @@
     ViewBag.Title = "Article";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<hr/>
-<hr/>
-<hr/>
-    <h2>Article</h2>
+<hr />
+<hr />
+<hr />
+<h2>Article</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -45,7 +45,8 @@
                     @Html.DisplayFor(modelItem => item.author)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.content)
+                    @*Html.DisplayFor(modelItem => item.content)*@
+                    @Html.Raw(item.content)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.postTime)
@@ -54,7 +55,7 @@
                     @Html.DisplayFor(modelItem => item.level)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.url)
+                    <img class="img-thumbnail" src="@Url.Content("~/Uploads/" + item.url)">
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.name)
@@ -73,9 +74,17 @@
     @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
     @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
     <script>
- $(document).ready(function () {
- $('.table').DataTable();
- });
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
+
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+        tinymce.init({
+            selector: '#mytextarea'
+        });
     </script>
 }
 <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
